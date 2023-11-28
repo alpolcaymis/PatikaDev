@@ -1,1 +1,3 @@
-console.log("Hello Node");
+import { hello } from "./myModule.js";
+
+hello("alp");

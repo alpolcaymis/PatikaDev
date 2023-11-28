@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "açıklama",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node index"
   },
   "author": "alp olcay mis",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "slugify": "^1.6.6"
+  }
 }
