@@ -1,0 +1,11 @@
+{
+  "name": "learning-node",
+  "version": "1.0.0",
+  "description": "açıklama",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "alp olcay mis",
+  "license": "ISC"
+}
