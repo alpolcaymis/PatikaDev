@@ -1,3 +1,3 @@
-import { hello } from "./myModule.js";
+import getData from "./app.js";
 
-hello("alp");
+getData(1);

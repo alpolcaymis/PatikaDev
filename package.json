@@ -10,7 +10,6 @@
   "author": "alp olcay mis",
   "license": "ISC",
   "dependencies": {
-    "node-fetch": "^3.3.2",
-    "slugify": "^1.6.6"
+    "axios": "^1.6.2"
   }
 }
