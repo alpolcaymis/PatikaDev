@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 html {
   background-color: rgb(73, 73, 73);
   /* background-image: url(/bg.jpeg);
@@ -13,19 +16,44 @@ body {
   height: 100vh;
   margin: 0;
 }
-
+/* ========== APP =========== */ /* FORM ve LİST */
 #container {
   display: flex;
 }
-
+/* ========== FORM =========== */ /* SOL TARAF */
 #form-container {
   flex: 1;
   padding: 20px;
+  border: 2px solid red;
 }
 
+#form {
+  border: 2px solid blueviolet;
+}
+#form label {
+  border: 2px solid green;
+}
+/* Checkbox element, when checked */
+input[type="text"] {
+  background-color: aqua;
+}
+
+/* Checkbox element, when checked */
+input[type="checkbox"] {
+  box-shadow: 0 0 0 3px blue;
+}
+input[type="checkbox"]:checked {
+  box-shadow: 0 0 0 3px hotpink;
+}
+#form button {
+  border: 2px solid white;
+}
+
+/* ========== LİST =========== */ /* SAĞ TARAF */
 #list-container {
   flex: 1;
   padding: 20px;
+  border: 2px solid black;
 }
 
 #loading {
@@ -37,6 +65,7 @@ body {
 #list {
   list-style-type: none;
   padding: 0;
+  border: 1px solid black;
 }
 
 .list-item {
