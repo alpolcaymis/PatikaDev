@@ -3,10 +3,10 @@
 }
 html {
   background-color: rgb(73, 73, 73);
-   background-image: url(/bg.jpeg); 
-   background-repeat: no-repeat;
-   background-size: cover; */
-   /* background-image: url(/b2.jpg); */
+  background-image: url(/bg.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-image: url(/b2.jpg); */
 }
 body {
   font-family: Arial, sans-serif;
