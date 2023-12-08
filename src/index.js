@@ -1,13 +1,11 @@
 // Önce Element'leri elime alıyorum
 // Container
 const container = document.getElementById("container");
-const formContainer = document.getElementById("form-container");
-const listContainer = document.getElementById("list-container");
-// Form Container
+// Form
 const form = document.getElementById("form");
 const titleInput = document.getElementById("title");
 const completedInput = document.getElementById("completed");
-// List Container
+// List
 const loadingDiv = document.getElementById("loading");
 const list = document.getElementById("list");
 
@@ -72,8 +70,6 @@ button.addEventListener("click", function () {
   document.body.classList.toggle("v2body");
   // Container
   container.classList.toggle("v2container");
-  formContainer.classList.toggle("v2formContainer");
-  listContainer.classList.toggle("v2listContainer");
   // Form Container
   form.classList.toggle("v2form");
   titleInput.classList.toggle("v2titleInput");

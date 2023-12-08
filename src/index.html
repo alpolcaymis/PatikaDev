@@ -9,33 +9,29 @@
   <body>
     <div id="container">
       <!-- Form Component -->
-      <div id="form-container">
-        <form id="form">
-          <label for="title">Title:</label>
-          <input
-            type="text"
-            id="title"
-            placeholder="What you gonna do?"
-            required
-          />
-          <label for="completed">Completed:</label>
-          <input type="checkbox" id="completed" />
-          <button type="submit">Add New Task</button>
-        </form>
-      </div>
+      <form id="form">
+        <label for="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          placeholder="What you gonna do?"
+          required
+        />
+        <label for="completed">Completed:</label>
+        <input type="checkbox" id="completed" />
+        <button type="submit">Add New Task</button>
+      </form>
 
       <!-- List Component -->
-      <div id="list-container">
-        <div id="loading">Loading...</div>
-        <ul id="list">
-          <!--  <li class="list-item">
+
+      <ul id="list">
+        <li id="loading">Loading...</li>
+        <!--  <li class="list-item">
             <strong>{Object.title}</strong>
             <span>{Object.completed ? "✔" : "❌"}</span>
           </li> -->
-        </ul>
-      </div>
+      </ul>
     </div>
-
     <script src="index.js"></script>
   </body>
 </html>
