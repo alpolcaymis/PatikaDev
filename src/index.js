@@ -6,6 +6,7 @@ const form = document.getElementById("form");
 const titleInput = document.getElementById("title");
 const completedInput = document.getElementById("completed");
 // List
+const listContainer = document.getElementById("list-container");
 const loadingDiv = document.getElementById("loading");
 const list = document.getElementById("list");
 
@@ -62,9 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
     form.reset();
   });
 });
+
 // Button'a basınca değişik şeyler olsun
 var button = document.querySelector("button");
-var body = document.querySelector("body");
+var header = document.querySelector("header");
 
 button.addEventListener("click", function () {
   document.body.classList.toggle("v2body");
@@ -76,5 +78,7 @@ button.addEventListener("click", function () {
   completedInput.classList.toggle("v2ompletedInput");
   // List Container
   loadingDiv.classList.toggle("v2loadingDiv");
-  list.classList.toggle("v2list");
+  listContainer.classList.toggle("v2list");
+  header.classList.toggle("v2header");
+  document.querySelector("img").classList.toggle("v2img");
 });
