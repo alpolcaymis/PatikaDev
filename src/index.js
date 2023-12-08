@@ -1,17 +1,23 @@
+// Önce Element'leri elime alıyorum
+// Form Container
+const form = document.getElementById("form");
+const titleInput = document.getElementById("title");
+const completedInput = document.getElementById("completed");
+// List Container
+const loadingDiv = document.getElementById("loading");
+const list = document.getElementById("list");
+
 // Bunu derste görmüştük, DOM yüklendikten sonra tüm JS çalışacak. defer async falan
 document.addEventListener("DOMContentLoaded", () => {
-  // Önce Element'leri elime alıyorum
-  // Form Container
-  const form = document.getElementById("form");
-  const titleInput = document.getElementById("title");
-  const completedInput = document.getElementById("completed");
-  // List Container
-  const loadingDiv = document.getElementById("loading");
-  const list = document.getElementById("list");
-
   // API'den verileri çekiyoruz
   fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
-    .then((response) => response.json())
+    .then((response) => {
+      if (response.ok) {
+        loadingDiv.style.display = "none";
+        return response.json();
+      }
+      throw new Error("Something went wrong");
+    })
     .then((data) => {
       data.forEach((fetchedTaskObject) => {
         console.log(fetchedTaskObject);
@@ -20,7 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     })
     // Sonra Loading Div'ini görünmez yapıyorum, aslında hala DOM'da duruyor.
-    .then((loadingDiv.style.display = "none"));
+    .catch((error) => {
+      console.log(error);
+      document.getElementById("loading").innerHTML = error;
+    });
 
   function appendToList(taskObject) {
     const taskListItem = document.createElement("li"); // li koydum
@@ -50,4 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Formu temizliyorum
     form.reset();
   });
+});
+// Button'a basınca değişik şeyler olsun
+var button = document.querySelector("button");
+var body = document.querySelector("body");
+
+button.addEventListener("click", function () {
+  document.body.classList.toggle("orange");
+  list.classList.toggle("v2list-item");
 });

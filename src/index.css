@@ -1,13 +1,7 @@
 * {
   box-sizing: border-box;
 }
-html {
-  background-color: rgb(73, 73, 73);
-  background-image: url(/bg.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  /* background-image: url(/b2.jpg); */
-}
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -53,22 +47,31 @@ input[type="checkbox"]:checked {
 #list-container {
   flex: 1;
   padding: 20px;
-  border: 4px solid black;
+  min-height: 20rem;
 }
 
 #loading {
   font-size: 18px;
   font-weight: bold;
   color: gray;
+  padding: 3rem;
 }
 
 #list {
   list-style-type: none;
   padding: 0;
-  border: 4px solid black;
 }
 
 .list-item {
   margin-bottom: 20px;
   background-color: wheat;
+}
+
+/* ========== BUTTON PRESSED =========== */
+.orange {
+  background: orange;
+}
+.v2list-item {
+  margin-bottom: 20px;
+  background-color: blue;
 }
