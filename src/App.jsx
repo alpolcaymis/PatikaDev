@@ -1,49 +1,77 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const api = {
   key: "4f9284ef0b1e69457f3d97eea812a895",
-  base: "https://home.openweathermap.org/data/2.5/",
+  base: "https://api.openweathermap.org/data/3.0/",
 };
-// https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
-
+// https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&appid={API key}
 function App() {
   const [search, setSearch] = useState("");
+  const [weather, setWeather] = useState({});
+  const [userLatLon, setUserLatLon] = useState({});
 
+  /*
+    Search button is pressed. Make a fetch call to the Open Weather Map API.
+  */
   const searchPressed = () => {
-    console.log("Search pressed!");
-    console.log(search);
-    fetch(`${api.base}weather?q=${search}&units=metric&appid=${api.key}`)
-      .then((response) => response.json())
+    fetch(`${api.base}weather?q=${search}&units=metric&APPID=${api.key}`)
+      .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        setWeather(result);
       });
   };
 
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position.coords.latitude, position.coords.longitude);
+      console.log(1);
+      console.log(position.coords.latitude);
+
+      // setData({
+      //   ...data,
+      //   name: newName,
+      // });
+      setUserLatLon({ userLon: 44, userLat: 22 });
+
+      console.log(userLatLon);
+      console.log(2);
+    });
+    console.log(3);
+  }, []);
+
   return (
-    <div id="container">
-      {/* HEADER */}
-      <h1>Weather App</h1>
+    <div className="App">
+      <header className="App-header">
+        {/* HEADER  */}
+        <h1>Weather App</h1>
 
-      {/* SEARCH BOX */}
-      <div>
-        <input
-          type="text"
-          placeholder="Enter city/town..."
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
-        />
-        <button onClick={searchPressed}>Search</button>
-      </div>
+        {/* Search Box - Input + Button  */}
+        <div>
+          <input
+            type="text"
+            placeholder="Enter city/town..."
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <button onClick={searchPressed}>Search</button>
+        </div>
 
-      {/* LOCATİON */}
-      <p>Istanbul, TURKEY</p>
+        {/* If weather is not undefined display results from API */}
+        {typeof weather.main !== "undefined" ? (
+          <div>
+            {/* Location  */}
+            <p>{weather.name}</p>
 
-      {/* TEMPERATURE C*/}
-      <p>32 °C</p>
+            {/* Temperature Celsius  */}
+            <p>{weather.main.temp}°C</p>
 
-      {/* CONDİTİON sunny*/}
-      <p>Sunny</p>
+            {/* Condition (Sunny ) */}
+            <p>{weather.weather[0].main}</p>
+            <p>({weather.weather[0].description})</p>
+          </div>
+        ) : (
+          ""
+        )}
+      </header>
     </div>
   );
 }

@@ -12,8 +12,6 @@ body {
   min-height: 100vh;
 }
 
-/* APP COMPONENT */
-
 #container {
   max-width: 60rem;
   margin: 2rem auto;
@@ -43,4 +41,12 @@ header p {
   margin: 0;
   text-align: center;
   color: #c6f4f2;
+}
+button {
+  padding: 8px;
+}
+
+input {
+  padding: 8px;
+  outline: none;
 }
