@@ -34,8 +34,7 @@ img {
 }
 
 h1 {
-  /* font-family: "Handjet", monospace; */
-  font-family: "Bodoni Moda", serif;
+  font-family: "Handjet", monospace;
   text-align: center;
   text-transform: uppercase;
   color: #c1e2dd;
@@ -44,115 +43,9 @@ h1 {
   margin: 0;
 }
 
-h1 em {
-  font-style: normal;
-  color: #00eeff;
-}
-
 header p {
   font-size: 1.2rem;
   margin: 0;
   text-align: center;
   color: #c6f4f2;
-}
-
-/* FORM COMPONENT  */
-
-#form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-#form input {
-  font: inherit;
-  border: 1px solid #54a399;
-  background-color: #192f2b;
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  color: #d1f0ec;
-  margin-right: 1rem;
-  width: 20rem;
-}
-
-#form button {
-  cursor: pointer;
-  background-color: #54a399;
-  border: 3px solid #54a399;
-  border-radius: 6px;
-  padding: 0.4rem 1rem;
-  color: #061e1a;
-  height: 100%;
-}
-
-#form button:hover {
-  background-color: #3c8379;
-  border-color: #3c8379;
-}
-
-/* LİST COMPONENT  */
-#list {
-  display: flex;
-  flex-direction: column;
-}
-/* filtercontact */
-#list input {
-  font: inherit;
-  border: 1px solid #54a399;
-  background-color: #192f2b;
-  border-radius: 4px;
-  color: #d1f0ec;
-  padding: 0.55rem;
-  margin: 1rem auto;
-  width: 100%;
-  max-width: 50rem;
-}
-
-#list ul {
-  margin: 0.3rem auto;
-  list-style-type: none;
-  padding: 0;
-  width: 100%;
-  max-width: 50rem;
-}
-
-#list ul li {
-  background: linear-gradient(#4df8df, #4df0f8);
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(35, 34, 34, 0.6);
-  color: #221c18;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin: 0.9rem auto;
-
-  padding: 0.3rem 1rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.phone_number button {
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  background: #12352f;
-  color: #edfcfa;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.phone_number button:hover {
-  background: #051715;
-}
-.phone_number button a {
-  padding: 0.5rem 1rem;
-  color: #edfcfa;
-  text-decoration: none;
-}
-.phone_number button a:hover {
-  background: #051715;
 }
