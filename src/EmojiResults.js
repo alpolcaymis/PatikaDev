@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-// import Clipboard from "clipboard";
+import Clipboard from "clipboard";
 
 import EmojiResultRow from "./EmojiResultRow";
 import "./EmojiResults.css";
@@ -10,9 +10,9 @@ export default class EmojiResults extends PureComponent {
     emojiData: PropTypes.array,
   };
 
-  // componentDidMount() {
-  //   this.clipboard = new Clipboard(".copy-to-clipboard");
-  // }
+  componentDidMount() {
+    this.clipboard = new Clipboard(".copy-to-clipboard");
+  }
 
   componentWillUnmount() {
     this.clipboard.destroy();
