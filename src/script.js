@@ -6,7 +6,7 @@ const commentModalContent = document.getElementById("commentModalContent");
 let allPosts = [];
 let timeoutId;
 
-// Sayfa yüklendiğinde postları getir
+// Sayfa açıldığında api'sine istek atıp verileri sayfada gösteriyorsunuz.
 fetch("https://jsonplaceholder.typicode.com/posts")
   .then((response) => response.json())
   .then((posts) => {
@@ -14,10 +14,10 @@ fetch("https://jsonplaceholder.typicode.com/posts")
     displayPosts(allPosts); //depolayığımı yolladım
   });
 
-// Arama filtresine göre postları güncelle
+// search kısmına debounce
 searchInput.addEventListener("input", () => {
   clearTimeout(timeoutId);
-  timeoutId = setTimeout(filterPosts, 500); // 500 milisaniye gecikme
+  timeoutId = setTimeout(filterPosts, 500); // 500ms saniye gecikme
 });
 
 // postlar card oluşturup container'a ekleniyor
@@ -31,19 +31,22 @@ function displayPosts(posts) {
     const postCard = document.createElement("div");
     postCard.classList.add("post-card");
     postCard.innerHTML = `
+                  <div class="clickable-part">
                   <h3>${post.title}</h3>
                   <p>${post.body}</p>
-                  <button onclick="deletePost(${post.id})">Delete</button>
+                  </div>
+                  
+                  <button onclick="deletePost(${post.id})">Delete</button>             
               `;
     postsContainer.appendChild(postCard);
 
-    postCard.addEventListener("click", () => {
+    postCard.children[0].addEventListener("click", () => {
       showComments(post.id);
     });
   });
 }
 
-// Yorumları commentModalContent içine doldurup gösteriyorum
+// yorumları commentModalContent içine doldurup gösteriyorum
 function showComments(postId) {
   fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
     .then((response) => response.json())
@@ -92,7 +95,7 @@ function filterPosts() {
   displayPosts(filteredPosts);
 }
 
-// Modal dışına tıklanınca modalı kapat
+// Modal dışına tıklayınca modalı görünmez yap backdrop etkisi
 commentModal.addEventListener("click", function (event) {
   if (event.target === commentModal) {
     commentModal.style.display = "none";
