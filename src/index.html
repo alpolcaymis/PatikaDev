@@ -3,18 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css" />
+    <title>Post App</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <input type="text" id="search" placeholder="Ara..." />
+      <label for="searchInput">Search Users</label>
+      <input type="text" id="searchInput" placeholder="Search..." />
     </header>
-    <main>
-      <ul id="posts"></ul>
-    </main>
-    <div id="modal"></div>
 
-    <script src="index.js"></script>
+    <div id="postsContainer"></div>
+
+    <div class="modal" id="commentModal">
+      <div class="modal-content" id="commentModalContent"></div>
+    </div>
+
+    <script src="script.js" defer></script>
   </body>
 </html>
