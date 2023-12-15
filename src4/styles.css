@@ -1,0 +1,55 @@
+.search-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.search-wrapper label {
+}
+.search-wrapper input {
+  font-size: 1rem;
+}
+
+.post-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+.post-cards .card {
+  border: 1px solid black;
+  background-color: wheat;
+  padding: 0.5rem;
+  position: relative;
+}
+.post-cards .card .title {
+  margin-bottom: 0.25rem;
+}
+.post-cards .card .body {
+  font-size: 0.8rem;
+  color: brown;
+}
+
+.hide {
+  display: none;
+}
+
+/* .post-cards .card .deleteBtn {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 0, 0, 0.532);
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top: none;
+  border-right: none;
+  border-bottom: 2px solid brown;
+  border-left: 2px solid brown;
+  border-bottom-left-radius: 10px;
+}
+.post-cards .card .deleteBtn:hover {
+  background-color: red;
+}
+.post-cards .card .deleteBtn:active {
+  background-color: orchid;
+}
+ */

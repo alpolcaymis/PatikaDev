@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+/* ========== APP =========== */ /* FORM ve LİST */
+#container {
+  display: flex;
+  gap: 1rem;
+}
+/* ========== FORM =========== */ /* SOL TARAF */
+
+#form {
+  flex: 1;
+  padding: 20px;
+  border: 4px solid blueviolet;
+}
+#form label {
+  border: 4px solid green;
+}
+/* Checkbox element, when checked */
+#form input {
+  background-color: aqua;
+}
+
+/* Checkbox element, when checked */
+input[type="checkbox"] {
+  box-shadow: 0 0 0 3px blue;
+}
+input[type="checkbox"]:checked {
+  box-shadow: 0 0 0 3px hotpink;
+}
+#form button {
+  border: 4px solid white;
+}
+
+/* ========== LİST =========== */ /* SAĞ TARAF */
+.list {
+  flex: 1;
+  padding: 20px;
+  min-height: 20rem;
+  list-style-type: none;
+  padding: 0;
+  border: 2px solid orangered;
+}
+
+#loading {
+  font-size: 18px;
+  font-weight: bold;
+  color: gray;
+  padding: 3rem;
+}
+
+.list-item {
+  margin-bottom: 20px;
+  background-color: wheat;
+}
+
+/* ========== BUTTON PRESSED =========== */
+
+.v2body {
+  margin: 0;
+  background: radial-gradient(#186a5e, #053339);
+  color: #e1eeeb;
+  min-height: 100vh;
+  /* -moz-osx-font-smoothing: grayscale; */
+  /* -webkit-font-smoothing: antialiased; */
+}
+.v2container {
+  max-width: 60rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: radial-gradient(#0b201d, #021619);
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.v2form {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  border: none !important;
+}
+.v2form label {
+  border: none !important;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+.v2form label:nth-child(3) {
+  border: none !important;
+  background-color: red;
+  width: 90%;
+  padding: 0.7rem;
+}
+
+.v2form input {
+  font: inherit;
+  border: 1px solid #54a399 !important;
+  background-color: #192f2b !important;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  color: #d1f0ec;
+  margin-right: 1rem;
+  width: 100%;
+}
+
+.v2form input[type="checkbox"] {
+  position: absolute;
+  box-shadow: none;
+  right: 0px;
+  height: 18px;
+}
+.v2form input[type="checkbox"]:checked {
+  box-shadow: none;
+}
+
+.v2form button {
+  cursor: pointer;
+  background-color: #54a399;
+  border: 3px solid #54a399 !important;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  color: #061e1a;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.v2form button:hover {
+  background-color: #3c8379;
+  border-color: #3c8379;
+}
+
+.v2list {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.v2list ul {
+  margin: 0.3rem auto;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  max-width: 50rem;
+}
+
+.v2list ul li {
+  background: linear-gradient(#4df8df, #4df0f8);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(35, 34, 34, 0.6);
+  color: #221c18;
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin: 0.7rem auto;
+  padding: 0.3rem 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+header {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  background: #202024;
+  border-bottom: 3px solid rgb(106, 106, 106);
+  box-shadow: 0 2px 8px rgba(193, 193, 193, 0.8);
+  white-space: nowrap;
+}
+.v2header {
+  display: block;
+}
+
+.text {
+  color: #939597;
+  margin: 0.6rem;
+  font-size: 3rem;
+  animation: flowing 15s linear infinite;
+  transform: translateX(100%);
+}
+.text span {
+  font-family: "Handjet", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}
+
+.text em {
+  font-style: normal;
+  color: #00eeff;
+}
+
+@keyframes flowing {
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+img {
+  display: none;
+  position: absolute;
+  width: 30%;
+  transform: scaleX(-1);
+  right: 0;
+  bottom: 0;
+}
+.v2img {
+  display: block;
+}
