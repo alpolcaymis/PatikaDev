@@ -1,12 +1,19 @@
 // WeatherDay.js
+
 import React, { useContext } from "react";
 
-const WeatherDay = ({ data }) => {
-  // const { city, day, weather, high, low } = data;
+const WeatherDay = (props) => {
+  // const { dt } = data;
+
+  // Günlerin listelendiği kartlarda; gün adı,
+  // hava durumu görseli(güneşli, yağmurlu, karlı, parçalı bulutlu),
+  // en yüksek ve en düşük sıcaklık gösterilmelidir.
 
   return (
     <div>
-      {/* <h2>{city}</h2> */}
+      {/* <div>Selam{props.data}</div> */}
+      {console.log(props.data)}
+      {/* <h2>{data.main}</h2> */}
       {/* <h3>{day}</h3> */}
       {/* <img src={weather} alt={weather} /> */}
       {/* <p>En yüksek sıcaklık: {high}°C</p> */}

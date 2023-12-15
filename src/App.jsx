@@ -4,6 +4,7 @@ import React, { useState, useContext, useEffect } from "react";
 import WeatherContext from "./components/WeatherContext";
 import WeatherDropdown from "./components/WeatherDropdown";
 import WeatherDay from "./components/WeatherDay";
+import AskLocation from "./components/AskLocation";
 
 // App.js
 const App = () => {
@@ -12,20 +13,18 @@ const App = () => {
 
   const API_KEY = "4f9284ef0b1e69457f3d97eea812a895";
   // let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
-  // let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
-  // let url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`;
-  // let url = `https://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=7&appid=${API_KEY}&units=metric`;
-  // let url = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&appid=${API_KEY}&units=metric`;
-
+  let url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
+  let data2;
   useEffect(() => {
     // API çağrısını burada yapın
     axios
       .get(url)
       .then((response) => {
-        const data = response.data.list;
-        console.log(response.data);
+        // data2 = response.data.list[0];
+        data2 = response.data;
+        console.log(data2);
 
-        weatherData[city] = data;
+        // weatherData[city] = data;
       })
       .catch((error) => {
         console.log("fetch olmadı aşko", error);
@@ -34,9 +33,12 @@ const App = () => {
 
   return (
     <div>
+      <AskLocation />
       <h1>Hava Durumu</h1>
 
-      <WeatherDay data={weatherData[city]} />
+      {/* <WeatherDay data={weatherData[city]} /> */}
+
+      <WeatherDay data={data2} />
 
       <WeatherDropdown city={city} setCity={setCity} />
     </div>
