@@ -94,7 +94,6 @@ function filterPosts() {
   );
   displayPosts(filteredPosts);
 }
-
 // Modal dışına tıklayınca modalı görünmez yap backdrop etkisi
 commentModal.addEventListener("click", function (event) {
   if (event.target === commentModal) {
