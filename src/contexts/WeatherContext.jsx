@@ -18,11 +18,15 @@ export const WeatherProvider = (props) => {
   const [current, setCurrent] = useState(null);
   const [daily, setDaily] = useState([]);
 
-  const apiKey = import.meta.env.VITE_API_KEY;
+  // const apiKey = import.meta.env.VITE_API_KEY;
+
+  const API_KEY = "4f9284ef0b1e69457f3d97eea812a895";
+  // let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+  let url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
 
   useEffect(() => {
     axios(
-      `https://api.openweathermap.org/data/2.5/onecall?lat=${city.latitude}&lon=${city.longitude}&exclude=hourly,minutely&units=metric&lang=tr&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${city.latitude}&lon=${city.longitude}&exclude=hourly,minutely&units=metric&lang=tr&appid=${API_KEY}`
     ).then(({ data }) => {
       setDaily(data.daily);
     });
