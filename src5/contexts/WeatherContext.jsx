@@ -16,19 +16,15 @@ export const WeatherProvider = (props) => {
   });
 
   const [current, setCurrent] = useState(null);
-  const [list, setList] = useState([]);
+  const [daily, setDaily] = useState([]);
 
-  const API_KEY = "4f9284ef0b1e69457f3d97eea812a895";
-  // https://api.openweathermap.org/data/2.5/forecast?q=istanbul&appid=4f9284ef0b1e69457f3d97eea812a895
-  let url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}&units=metric`;
+  const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     axios(
-      "https://api.openweathermap.org/data/2.5/forecast?q=istanbul&appid=4f9284ef0b1e69457f3d97eea812a895&units=metric"
+      `https://api.openweathermap.org/data/2.5/onecall?lat=${city.latitude}&lon=${city.longitude}&exclude=hourly,minutely&units=metric&lang=tr&appid=${apiKey}`
     ).then(({ data }) => {
-      console.log("main", data.list[0].weather[0].main);
-      console.log(data);
-      setList(data.list); // data.daily => data.list
+      setDaily(data.daily);
     });
   }, [city]);
 
@@ -39,8 +35,8 @@ export const WeatherProvider = (props) => {
         setCity,
         current,
         setCurrent,
-        list,
-        setList,
+        daily,
+        setDaily,
       }}
     >
       {props.children}
