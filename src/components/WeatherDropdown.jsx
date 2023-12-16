@@ -1,5 +1,4 @@
 // WeatherDropdown.js
-import React, { useState, useContext } from "react";
 
 const WeatherDropdown = ({ city, setCity }) => {
   const cities = ["istanbul", "ankara", "izmir", "adana", "bursa", "antalya"];
