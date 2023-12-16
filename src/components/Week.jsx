@@ -18,13 +18,11 @@ function Week() {
     .filter((obj) => obj !== null); // Null değerleri filtrele
 
   return (
-    <div>
-      <ul className="flex flex-wrap gap-2">
-        {yeniDizi.map((item, index) => {
-          return <Day key={index} item={item} />;
-        })}
-      </ul>
-    </div>
+    <ul className="flex gap-2 h-fit">
+      {yeniDizi.map((item, index) => {
+        return <Day key={index} item={item} />;
+      })}
+    </ul>
   );
 }
 

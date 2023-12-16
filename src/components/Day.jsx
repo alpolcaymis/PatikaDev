@@ -22,18 +22,23 @@ function Day({ item }) {
   }
 
   return (
-    <li className="w-40 h-auto border bg-sky-200 first:bg-sky-500 first:border-sky-900 first:border-4">
+    <li className="w-fit h-auto p-0.5 border rounded-md bg-white bg-opacity-60  first:bg-sky-500 first:bg-opacity-80 first:border-sky-900 first:border-4 flex flex-col">
       {item && (
         <>
-          <h1>{item.dt_txt}</h1>
-          <h1>{getDayOfWeek(item.dt_txt)}</h1>
+          <h3 className="text-md font-medium ">{getDayOfWeek(item.dt_txt)}</h3>
           <img
             className="day-icon"
             src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
           />
-          <div>{item.weather[0].description}</div>
-          <div>max: {item.main.temp_max}°C</div>
-          <div>min: {item.main.temp_min}°C</div>
+          <div className="text-lg font-light">
+            {item.weather[0].description}
+          </div>
+          <div>
+            <span className="font-medium">
+              {item.main.temp_max.toFixed()}°C{" "}
+            </span>
+            <span>{item.main.temp_min.toFixed()}°C</span>
+          </div>
         </>
       )}
     </li>

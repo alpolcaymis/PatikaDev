@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  content: "";
+  background: url("./assets/sunset.jpg") no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  font-family: "Outfit", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  font-weight: 200;
+}
+
+.top {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.description {
+  position: relative;
+  /* right: -90%; */
+  transform-origin: 50% 50%;
+  transform: rotate(0deg);
+}
+
+p {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 6rem;
+}
