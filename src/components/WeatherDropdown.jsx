@@ -1,7 +1,18 @@
-// WeatherDropdown.js
+import { useWeatherContext } from "../context/WeatherContext";
 
-const WeatherDropdown = ({ city, setCity }) => {
-  const cities = ["istanbul", "ankara", "izmir", "adana", "bursa", "antalya"];
+const WeatherDropdown = () => {
+  const { city, setCity } = useWeatherContext();
+
+  const cities = [
+    "istanbul",
+    "ankara",
+    "izmir",
+    "adana",
+    "bursa",
+    "antalya",
+    "konya",
+    "gaziantep",
+  ];
 
   return (
     <div>
