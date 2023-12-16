@@ -3,17 +3,17 @@ import { useWeatherContext } from "../../contexts/WeatherContext";
 import { DayCard } from "../DayCard";
 
 export function WeekInfo() {
-  const { daily, setCurrent } = useWeatherContext();
+  const { list, setCurrent } = useWeatherContext();
   const [selectedCard, setSelectedCard] = useState(0);
 
   useEffect(() => {
-    setCurrent(daily[selectedCard]);
-  }, [daily]);
+    setCurrent(list[selectedCard]);
+  }, [list]);
 
   return (
     <div className="week-container">
       <ul className="week-list">
-        {daily.map((item, index) => {
+        {list.map((item, index) => {
           if (index < 7)
             return (
               <DayCard
@@ -23,7 +23,7 @@ export function WeekInfo() {
                   setCurrent(item);
                 }}
                 key={index}
-                item={item}
+                list={item}
               />
             );
         })}

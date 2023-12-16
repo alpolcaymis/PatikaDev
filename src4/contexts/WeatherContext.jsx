@@ -1,14 +1,19 @@
-// App.js
+import { createContext, useState, useContext, useEffect } from "react";
 import axios from "axios";
-import React, { useState, useContext, useEffect } from "react";
-import WeatherContext from "./components/WeatherContext";
-import WeatherDropdown from "./components/WeatherDropdown";
-import WeatherDay from "./components/WeatherDay";
 
-// App.js
-const App = () => {
-  const [city, setCity] = useState("istanbul");
-  const weatherData = useContext(WeatherContext);
+export const WeatherContext = createContext();
+
+export const useWeatherContext = () => useContext(WeatherContext);
+
+export const WeatherProvider = (props) => {
+  const [city, setCity] = useState({
+    id: 6,
+    name: "Ankara",
+    latitude: "39.9208",
+    longitude: "32.8541",
+    population: 5270575,
+    region: "İç Anadolu",
+  });
 
   const [current, setCurrent] = useState(null);
   const [list, setList] = useState([]);
@@ -28,16 +33,17 @@ const App = () => {
   }, [city]);
 
   return (
-    <div>
-      <h1>Hava Durumu</h1>
-
-      {/* <WeatherDay data={weatherData[city]} /> */}
-
-      <WeatherDay data={data2} />
-
-      <WeatherDropdown city={city} setCity={setCity} />
-    </div>
+    <WeatherContext.Provider
+      value={{
+        city,
+        setCity,
+        current,
+        setCurrent,
+        list,
+        setList,
+      }}
+    >
+      {props.children}
+    </WeatherContext.Provider>
   );
 };
-
-export default App;
