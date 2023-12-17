@@ -1,0 +1,30 @@
+.custom-button {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.primary-button {
+  background-color: #1890ff;
+  color: #fff;
+}
+
+.dashed-button {
+  border-style: dashed;
+}
+
+.text-button {
+  background-color: transparent;
+  color: #1890ff;
+}
+
+.link-button {
+  background-color: transparent;
+  color: #1890ff;
+  text-decoration: underline;
+}
+
+.default-button {
+  color: aquamarine;
+}
