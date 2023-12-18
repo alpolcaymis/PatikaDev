@@ -1,9 +1,13 @@
 import React from "react";
 import product_IMG from "../assets/p_IMG.jpg";
+import { useCartContext } from "../context/cart-context";
 
 const Product = () => {
+  const { productsArray } = useCartContext();
+
+  console.log("selam", productsArray);
   return (
-    <div
+    <li
       className="border-2 border-yellow-300 
   w-[200px] min-h-fit  overflow-hidden p-2 "
     >
@@ -20,7 +24,7 @@ const Product = () => {
           Delete
         </button>
       </div>
-    </div>
+    </li>
   );
 };
 

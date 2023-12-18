@@ -17,7 +17,7 @@ export const CartContextProvider = ({ children }) => {
   }, [url]);
 
   return (
-    <CartContext.Provider value={(productsArray, setProductsArray)}>
+    <CartContext.Provider value={productsArray}>
       {children}
     </CartContext.Provider>
   );
