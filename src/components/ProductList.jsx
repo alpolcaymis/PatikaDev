@@ -3,17 +3,9 @@ import Product from "./Product";
 import { useCartContext } from "../context/cart-context";
 
 const ProductList = () => {
-  const { productsArray, setProductsArray } = useCartContext();
+  const { productsArray, filterArray } = useCartContext();
 
-  console.log("selam", productsArray);
-
-  const filterArray = (productID) => {
-    const filteredArray = productsArray.filter((productID) => {
-      productID !== productsArray.id;
-    });
-    setProductsArray(filteredArray);
-    console.log("filteredArray", filteredArray);
-  };
+  console.log("ProductList.jsx -> productsArray", productsArray);
 
   return (
     <div className="basis-10/12 border-4 border-red-900 ">

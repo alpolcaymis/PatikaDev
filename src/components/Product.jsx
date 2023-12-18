@@ -1,6 +1,8 @@
 import React from "react";
+import { useCartContext } from "../context/cart-context";
 
 const Product = ({ item, filterArray }) => {
+  const { setModalIsOpen, openModal } = useCartContext();
   return (
     <>
       {item && (
@@ -13,8 +15,12 @@ const Product = ({ item, filterArray }) => {
           <div>
             price : <b>{item.price} €</b>
           </div>
+
           <div className="mt-2 relative">
-            <button className="px-4 py-1 bg-slate-50 text-slate-900 border-slate-900 border-2 ">
+            <button
+              className="px-4 py-1 bg-slate-50 text-slate-900 border-slate-900 border-2 "
+              onClick={openModal}
+            >
               Edit
             </button>
             <button
