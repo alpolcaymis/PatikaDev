@@ -1,18 +1,14 @@
 import React from "react";
 import product_IMG from "../assets/p_IMG.jpg";
-import { useCartContext } from "../context/cart-context";
 
-const Product = () => {
-  const { productsArray } = useCartContext();
-
-  console.log("selam", productsArray);
+const Product = ({ title }) => {
   return (
     <li
       className="border-2 border-yellow-300 
   w-[200px] min-h-fit  overflow-hidden p-2 "
     >
       <img src={product_IMG} alt="" className="mx-auto w-full" />
-      <h2>title</h2>
+      <h2>{title}</h2>
       <div>
         price :<b>100 €</b>
       </div>
