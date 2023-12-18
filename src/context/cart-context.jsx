@@ -5,28 +5,20 @@ export const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
-  const [city, setCity] = useState("istanbul");
-  const [list, setList] = useState([]);
-
-  let DATA_ARRAY_FROM_API = [];
-
+  const [productsArray, setProductsArray] = useState([]);
   let url = `https://fakestoreapi.com/products`;
 
   useEffect(() => {
     axios(url).then(({ data }) => {
       console.log(data);
-      DATA_ARRAY_FROM_API = data;
+      setProductsArray(data);
+      console.log("productsArray", productsArray);
     });
   }, [url]);
 
-  const ctxValue = {
-    city,
-    setCity,
-    list,
-    setList,
-  };
-
   return (
-    <CartContext.Provider value={ctxValue}>{children}</CartContext.Provider>
+    <CartContext.Provider value={(productsArray, setProductsArray)}>
+      {children}
+    </CartContext.Provider>
   );
 };

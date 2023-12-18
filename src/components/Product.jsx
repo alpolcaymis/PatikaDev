@@ -13,10 +13,10 @@ const Product = () => {
         price :<b>100 €</b>
       </div>
       <div className="mt-2 relative">
-        <button className="border px-4 py-1 bg-slate-50 text-slate-900 border-slate-900 border-2 ">
+        <button className="px-4 py-1 bg-slate-50 text-slate-900 border-slate-900 border-2 ">
           Edit
         </button>
-        <button className="border border-2 px-2 py-1 bg-slate-800 text-slate-50 absolute right-0">
+        <button className="border-2 px-2 py-1 bg-slate-800 text-slate-50 absolute right-0">
           Delete
         </button>
       </div>
