@@ -1,0 +1,83 @@
+.overlay {
+  min-height: 100vh;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgb(255, 255, 255), rgb(0, 0, 0));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay-inner {
+  background: black;
+  width: 700px;
+  height: 550px;
+  padding: 1.5rem;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-size: 1.3rem;
+}
+.overlay-inner .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  background-color: transparent;
+  border-left: 3px solid rgb(169, 169, 169);
+  padding: 0.4rem;
+}
+.overlay-inner .close:hover {
+  background-color: white;
+  color: black;
+}
+.overlay-inner .inner-box {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.overlay-inner .inner-box img {
+  margin-right: 20px;
+  width: 150px;
+  height: 200px;
+}
+.overlay-inner .inner-box h3 {
+  margin-top: 10px;
+  color: green;
+}
+.overlay-inner .inner-box h4 {
+  color: blue;
+}
+.overlay-inner .inner-box button {
+  outline: none;
+  border: none;
+  width: 100px;
+  border-radius: 5px;
+  background-color: #24a0ed;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+
+  font: inherit;
+  cursor: pointer;
+  background-color: white;
+  border: 3px solid #6c6c6c;
+  box-shadow: 0 0px 5rem white;
+  color: #1f1a09;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+}
+.overlay-inner .inner-box button:hover {
+  color: white;
+  background-color: #1f1a09;
+}
+.overlay-inner .description {
+  margin-top: 2rem;
+  text-align: justify;
+  font-size: 13px;
+}

@@ -1,0 +1,115 @@
+/* GLOBAL VARIABLES */
+:root {
+  --speed: 0.65s;
+}
+
+@keyframes zoom {
+  from {
+    object-position: 0 50%;
+  }
+  to {
+    object-position: 100% 50%;
+  }
+}
+
+.card {
+  position: relative;
+  grid-area: card;
+  overflow: hidden;
+  width: auto;
+  max-width: 250px;
+  height: 400px;
+  font-size: var(--fontOrigin);
+  border-radius: 8px;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all var(--speed) ease;
+
+  box-shadow: 0 5px 5px #efefef;
+  border-radius: 1rem;
+  text-align: center;
+
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.card:hover {
+  box-shadow: 0 40px 130px rgba(0, 0, 0, 0.6);
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+  transform: scale(0.9);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card__image {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+}
+
+.card__image img {
+  -webkit-transform: scale(1.3, 1.3);
+  transform: scale(1.3, 1.3);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card__name {
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+
+  background: -webkit-linear-gradient(rgb(255, 255, 255), #a1a1a1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card__job {
+  display: block;
+  font-size: 1rem;
+  letter-spacing: 0.35rem;
+  color: rgba(255, 255, 255, 0.775);
+  font-weight: bold;
+  color: rgba(100, 130, 200, 1);
+}
+
+.card__bio {
+  position: relative;
+  -webkit-transform: translateY(30%);
+  transform: translateY(30%);
+  display: block;
+  margin: 22px 0 16px 0;
+  font-size: var(--fontMedium);
+  font-weight: var(--fontLight);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5));
+
+  color: rgba(255, 255, 255, 0.65);
+  opacity: 0;
+  -webkit-transition: all var(--speed) ease;
+  transition: all var(--speed) ease;
+}
+
+.card:hover .card__bio {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Blur effect hover */
+.card[data-effect="blur"]:hover .card__image img {
+  filter: blur(5px);
+}
+
+.card[data-effect="blur"] .card__image img {
+  animation-name: blur;
+}
