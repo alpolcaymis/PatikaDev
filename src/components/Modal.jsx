@@ -18,7 +18,7 @@ function Modal({ children }) {
   //
   return createPortal(
     <dialog
-      className="modal rounded-md border-4 border-teal-200 p-4"
+      className="modal rounded-md p-2"
       ref={dialog}
       onClose={onCloseModal}
     >

@@ -35,7 +35,7 @@ function App() {
       <Modal>
         <ProductDetails />
       </Modal>
-      <div className="flex flex-col  bg-slate-600  border-8   border-slate-900 min-h-screen justify-between ">
+      <div className="flex flex-col  min-h-screen justify-between ">
         <Header />
         <ProductList />
         <Footer />
