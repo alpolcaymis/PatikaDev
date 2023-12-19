@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import { CartContextProvider } from "./context/cart-context";
 import Modal from "./components/Modal";
 import { ProductDetails } from "./components/ProductDetails";
-import { ToastBar, Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
       <Modal>
         <ProductDetails />
       </Modal>
-      <div className="flex flex-col  bg-slate-600  border border-8   border-slate-900 min-h-screen justify-between ">
+      <div className="flex flex-col  bg-slate-600  border-8   border-slate-900 min-h-screen justify-between ">
         <Header />
         <ProductList />
         <Footer />
