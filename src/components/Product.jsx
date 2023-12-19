@@ -2,7 +2,7 @@ import React from "react";
 import { useCartContext } from "../context/cart-context";
 
 const Product = ({ item, filterArray }) => {
-  const { setModalIsOpen, openModal } = useCartContext();
+  const { setModalIsOpen, openModal, findInArray } = useCartContext();
   return (
     <>
       {item && (
@@ -19,7 +19,9 @@ const Product = ({ item, filterArray }) => {
           <div className="mt-2 relative">
             <button
               className="px-4 py-1 bg-slate-50 text-slate-900 border-slate-900 border-2 "
-              onClick={openModal}
+              onClick={() => {
+                openModal(), findInArray(item.id);
+              }}
             >
               Edit
             </button>

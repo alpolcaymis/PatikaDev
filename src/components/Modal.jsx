@@ -17,7 +17,11 @@ function Modal({ children }) {
 
   //
   return createPortal(
-    <dialog className="modal" ref={dialog} onClose={onCloseModal}>
+    <dialog
+      className="modal rounded-md border-4 border-teal-200 p-4"
+      ref={dialog}
+      onClose={onCloseModal}
+    >
       {modalIsOpen ? children : null}
     </dialog>,
     document.getElementById("modal")

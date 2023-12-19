@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import ProductList from "./components/ProductList";
 import Footer from "./components/Footer";
-import { CartContextProvider, useCartContext } from "./context/cart-context";
+import { CartContextProvider } from "./context/cart-context";
 import Modal from "./components/Modal";
 import { ProductDetails } from "./components/ProductDetails";
 

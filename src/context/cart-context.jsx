@@ -6,6 +6,7 @@ export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [foundArray, setFoundArray] = useState([]);
 
   function onCloseModal() {
     setModalIsOpen(false);
@@ -33,16 +34,27 @@ export const CartContextProvider = ({ children }) => {
     console.log("filteredArray", filteredArray);
   };
 
+  const findInArray = (productID) => {
+    setFoundArray(productsArray.find((item) => item.id === productID));
+    console.log("productID", productID);
+    console.log("foundArray", foundArray);
+
+    // foundArray && (foundArray.title = "adana");
+  };
+  // findInArray(3);
+
   return (
     <CartContext.Provider
       value={{
         productsArray,
         setProductsArray,
         filterArray,
+        findInArray,
         modalIsOpen,
         setModalIsOpen,
         openModal,
         onCloseModal,
+        foundArray,
       }}
     >
       {children}
