@@ -1,8 +1,9 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[CANLI TIKLA](https://6581b87f646ba227c8052a50--sprightly-lebkuchen-f37401.netlify.app/) 
+[CANLI TIKLA](https://6581b87f646ba227c8052a50--sprightly-lebkuchen-f37401.netlify.app/) 
+[CANLI TIKLA](https://6581b87f646ba227c8052a50--sprightly-lebkuchen-f37401.netlify.app/) 
 
-Currently, two official plugins are available:
+![image](https://github.com/alpolcaymis/PatikaDev/assets/71964088/49a4d673-fd04-459f-8909-1e994eec92cc)
+![image](https://github.com/alpolcaymis/PatikaDev/assets/71964088/64b98ede-8d32-46eb-9e0c-4008d72fc92c)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
