@@ -4,14 +4,36 @@
 
 body {
   font-family: "Lato", sans-serif;
-  background-color: #f1f2f7;
+  background-color: white;
 }
 
-header {
-  background: linear-gradient(
-    0deg,
-    rgba(241, 242, 247, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
+header img {
+  background-color: black;
+
+  clip-path: polygon(
+    10% 25%,
+    35% 25%,
+    35% 0%,
+    65% 0%,
+    65% 25%,
+    90% 25%,
+    90% 50%,
+    65% 50%,
+    65% 100%,
+    35% 100%,
+    35% 50%,
+    10% 50%
   );
-  background-color: rgba(0, 0, 0, 0.348);
+}
+
+.header-v2 {
+  display: block;
+  margin: 0px auto 0px;
+  padding: 10px 0;
+  width: 110px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #0099cc;
+  border: none;
 }

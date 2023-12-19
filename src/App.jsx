@@ -13,33 +13,21 @@ function App() {
       <Toaster
         position="top-center"
         toastOptions={{
-          // Define default options
-          className: "",
-          duration: 3000,
+          duration: 3000, //
           style: {
             background: "#363636",
             color: "#fff",
           },
-
-          // Default options for specific types
-          success: {
-            duration: 3000,
-            theme: {
-              primary: "green",
-              secondary: "black",
-            },
-          },
         }}
       />
-
       <Modal>
         <ProductDetails />
       </Modal>
-      <div className="flex flex-col  min-h-screen justify-between ">
+      <main className="app-container flex flex-col min-h-screen justify-between ">
         <Header />
         <ProductList />
         <Footer />
-      </div>
+      </main>
     </CartContextProvider>
   );
 }

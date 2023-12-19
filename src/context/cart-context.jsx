@@ -13,8 +13,6 @@ export const CartContextProvider = ({ children }) => {
   }
   function openModal() {
     setModalIsOpen(true);
-    console.log("open modal çalıştı");
-    console.log(modalIsOpen);
   }
 
   const [productsArray, setProductsArray] = useState([]);
@@ -23,25 +21,18 @@ export const CartContextProvider = ({ children }) => {
   useEffect(() => {
     axios(url).then(({ data }) => {
       setProductsArray(data);
-      console.log("Fetch Çalıştı");
+      console.log("fetch fn worked!");
     });
   }, [url]);
 
   const filterArray = (productID) => {
     const filteredArray = productsArray.filter((item) => item.id !== productID);
-    console.log("productID", productID);
     setProductsArray(filteredArray);
-    console.log("filteredArray", filteredArray);
   };
 
   const findInArray = (productID) => {
     setFoundArray(productsArray.find((item) => item.id === productID));
-    console.log("productID", productID);
-    console.log("foundArray", foundArray);
-
-    // foundArray && (foundArray.title = "adana");
   };
-  // findInArray(3);
 
   return (
     <CartContext.Provider
@@ -51,7 +42,6 @@ export const CartContextProvider = ({ children }) => {
         filterArray,
         findInArray,
         modalIsOpen,
-        setModalIsOpen,
         openModal,
         onCloseModal,
         foundArray,
