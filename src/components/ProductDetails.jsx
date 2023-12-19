@@ -1,5 +1,6 @@
 import { useCartContext } from "../context/cart-context";
 import { useRef } from "react";
+import toast from "react-hot-toast";
 
 export const ProductDetails = () => {
   const { onCloseModal, foundArray } = useCartContext();
@@ -43,10 +44,17 @@ export const ProductDetails = () => {
       <button
         className="p-2 px-6 border-2 border-teal-500 rounded-md bg-yellow-300 hover:bg-black hover:text-white "
         onClick={() => {
-          onCloseModal(), edit();
+          onCloseModal(), edit(), toast.success("Saved!");
         }}
       >
         Save
+      </button>
+      <button
+        onClick={() => {
+          onCloseModal(), toast.error("Not Saved!");
+        }}
+      >
+        Close
       </button>
     </div>
   );
