@@ -6,7 +6,7 @@ export const useCartContext = () => useContext(CartContext);
 
 export const CartContextProvider = ({ children }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [foundArray, setFoundArray] = useState([]);
+  const [foundArray, setFoundArray] = useState([]); //It actually an object, not array. Rename it.
 
   function onCloseModal() {
     setModalIsOpen(false);
