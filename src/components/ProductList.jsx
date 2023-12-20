@@ -4,7 +4,7 @@ import loadingIMG from "../assets/loading.jpg";
 import Header from "./Header";
 
 const ProductList = () => {
-  const { productsArray, filterArray } = useCartContext();
+  const { productsArray } = useCartContext();
 
   return (
     <div className="basis-10/12 relative">
@@ -16,9 +16,7 @@ const ProductList = () => {
 
       <ul className=" flex flex-wrap gap-4 p-8 justify-center md:justify-center  ">
         {productsArray.map((item) => {
-          return (
-            <Product key={item.id} item={item} filterArray={filterArray} />
-          );
+          return <Product key={item.id} item={item} />;
         })}
       </ul>
       <Header v2="header-v2 " />

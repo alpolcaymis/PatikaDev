@@ -3,8 +3,8 @@ import { useCartContext } from "../context/cart-context";
 import toast from "react-hot-toast";
 import { CiCircleRemove } from "react-icons/ci";
 
-const Product = ({ item, filterArray }) => {
-  const { openModal, findInArray } = useCartContext();
+const Product = ({ item }) => {
+  const { openModal, findInArray, filterArray } = useCartContext();
 
   return (
     <>
