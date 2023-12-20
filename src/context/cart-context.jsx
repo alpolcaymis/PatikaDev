@@ -38,7 +38,6 @@ export const CartContextProvider = ({ children }) => {
     <CartContext.Provider
       value={{
         productsArray,
-        setProductsArray,
         filterArray,
         findInArray,
         modalIsOpen,
