@@ -19,7 +19,6 @@ const ProductList = () => {
           return <Product key={item.id} item={item} />;
         })}
       </ul>
-      <Header v2="header-v2 " />
     </div>
   );
 };
