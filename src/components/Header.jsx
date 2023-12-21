@@ -8,7 +8,7 @@ const Header = (props) => {
     >
       <h1 className="font-bold text-3xl">GENIE</h1>
 
-      <img className="p-5 pr-[1.3rem]" src={logo} />
+      <img className="slide p-5 pr-[1.3rem]" src={logo} />
 
       <h1 className="font-bold text-3xl">STORE</h1>
     </header>

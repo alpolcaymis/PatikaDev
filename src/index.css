@@ -36,4 +36,20 @@ header img {
   text-transform: uppercase;
   background-color: #0099cc;
   border: none;
+  position: absolute;
+  bottom: 26px;
+}
+
+.slide {
+  margin-top: 40%;
+  animation: slideDown 3s ease 0.5s 1 normal forwards;
+}
+
+@keyframes slideDown {
+  from {
+    margin-top: 40%;
+  }
+  to {
+    margin-top: 0;
+  }
 }
