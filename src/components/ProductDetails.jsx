@@ -39,11 +39,11 @@ export const ProductDetails = () => {
         <div className="text-right py-2">
           <textarea
             defaultValue={foundArray.description.split(".").join("\n")}
-            className="text-left border-l-4 border-l-slate-400 overflow-hidden mr-2 text-xs"
+            className="text-left border-l-4 border-l-slate-400  mr-2 text-sm"
             ref={textAreaRef}
             id="description"
             rows="13"
-            cols="39"
+            cols="33"
           />
         </div>
       </div>
