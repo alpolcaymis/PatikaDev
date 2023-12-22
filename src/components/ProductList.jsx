@@ -8,7 +8,14 @@ const ProductList = () => {
 
   return (
     <div className="basis-10/12 relative">
-      <h1 className="text-center font-light">WishList</h1>
+      <h1
+        className="text-center font-light cursor-pointer"
+        onClick={() => {
+          document.querySelector("main").classList.toggle("genie-bg");
+        }}
+      >
+        WishList
+      </h1>
 
       {productsArray.length === 0 && (
         <img src={loadingIMG} className="mx-auto" />

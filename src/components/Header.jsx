@@ -4,7 +4,7 @@ import logo from "../assets/genie.gif";
 const Header = (props) => {
   return (
     <header
-      className={`${props.v2} basis-1/12 pb-8 flex justify-center items-center text-lg`}
+      className={`${props.v2} basis-1/12 pb-8 flex justify-center items-center text-3xl tracking-widest `}
     >
       <h1 className="font-bold text-3xl">GENIE</h1>
 
