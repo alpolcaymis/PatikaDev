@@ -1,16 +1,43 @@
-import React from "react";
-import logo from "../assets/genie.gif";
+import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+// import { useSelector, useDispatch } from "react-redux";
+// import { logout, reset } from "../features/auth/authSlice";
 
-const Header = (props) => {
+const Header = () => {
+  const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const { user } = useSelector((state) => state.auth);
+
+  const onLogout = () => {
+    // dispatch(logout());
+    // dispatch(reset());
+    navigate("/");
+  };
+
   return (
-    <header
-      className={`${props.v2} basis-1/12 pb-8 flex justify-center items-center text-3xl tracking-widest `}
-    >
-      <h1 className="font-bold text-3xl">GENIE</h1>
-
-      <img className="slide p-5 pr-[1.3rem]" src={logo} />
-
-      <h1 className="font-bold text-3xl">STORE</h1>
+    <header className="header">
+      <div className="logo">
+        <Link to="/">Support Desk</Link>
+      </div>
+      <ul>
+        {true ? (
+          <li>
+            <button className="btn" onClick={onLogout}>
+              <FaSignOutAlt />
+              Logout
+            </button>
+          </li>
+        ) : (
+          <>
+            <li>
+              <Link to="/login">
+                <FaSignInAlt />
+                Login
+              </Link>
+            </li>
+          </>
+        )}
+      </ul>
     </header>
   );
 };
