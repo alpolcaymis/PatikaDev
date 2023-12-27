@@ -1,51 +1,21 @@
-import { useEffect } from "react";
-
 import BackButton from "../components/BackButton";
 import Spinner from "../components/Spinner";
 import { useParams, useNavigate } from "react-router-dom";
 
 function Ticket() {
-  const { ticket, isLoading, isSuccess, isError, message } = useSelector(
-    (state) => state.tickets
-  );
-
-  const { notes, isLoading: notesIsLoading } = useSelector(
-    (state) => state.notes
-  );
-
   const params = useParams();
   const { ticketId } = useParams();
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (isError) {
-      toast.error(message);
-    }
-
-    dispatch(getTicket(ticketId));
-    dispatch(getNotes(ticketId));
-    // eslint-disable-next-line
-  }, [isError, message, ticketId]);
-
-  // Close ticket
-  const onTicketClose = () => {
-    dispatch(closeTicket(ticketId));
-    toast.success("Ticket Closed");
-    navigate("/tickets");
-  };
-
-  if (isLoading) {
-    return <Spinner />;
-  }
-  if (isError) {
-    return <h3>Something went wrong</h3>;
-  }
+  // const onTicketClose = () => {
+  //   dispatch(closeTicket(ticketId));
+  //   toast.success("Ticket Closed");
+  //   navigate("/tickets");
 
   return (
     <div className="ticket-page">
       <header className="ticket-header">
-        <BackButton url="/tickets" />
+        <BackButton url="/admin/tickets" />
         <h2>
           Ticket ID : {ticket._id}
           <span className={`status status-${ticket.status}`}>

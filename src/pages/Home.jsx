@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { FaQuestionCircle, FaTicketAlt } from "react-icons/fa";
+import { useCartContext } from "../context/cart-context";
 
 const Home = () => {
+  const { isLoggedIn } = useCartContext();
   return (
     <>
       <section className="heading">
@@ -10,9 +12,6 @@ const Home = () => {
       </section>
       <Link to="/new-ticket" className="btn btn-reverse btn-block">
         <FaQuestionCircle /> Create New Ticket
-      </Link>
-      <Link to="/tickets" className="btn btn-block">
-        <FaTicketAlt /> View My Tickets
       </Link>
     </>
   );

@@ -1,57 +1,32 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
 // import { useSelector, useDispatch } from "react-redux";
 // import { login, reset } from "../features/auth/authSlice";
 import Spinner from "../components/Spinner";
+import { useCartContext } from "../context/cart-context";
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const { setIsLoggedIn, isLoggedIn } = useCartContext();
+  const idField = useRef();
+  const passwordField = useRef();
 
-  const { email, password } = formData;
-
-  // const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  // const { user, isLoading, isError, isSuccess, message } = useSelector(
-  //   (state) => state.auth
-  // );
-  // when submit form
-  // useEffect(() => {
-  //   if (isError) {
-  //     toast.error(message);
-  //   }
-
-  //   // Redirect when logged in
-  //   if (isSuccess || user) {
-  //     navigate("/");
-  //   }
-  //   dispatch(reset());
-  // }, [isError, isSuccess, user, message, navigate, dispatch]);
-
-  // const onChange = (e) => {
-  //   setFormData((prevState) => ({
-  //     ...prevState,
-  //     [e.target.name]: e.target.value,
-  //   }));
-  // };
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    if (true) {
-      navigate("/");
+    if (
+      idField.current.value === "kodluyoruz" &&
+      passwordField.current.value === "bootcamp109"
+    ) {
+      setIsLoggedIn(true);
+      toast.success("Successfully LoggedIn");
+      navigate("/admin");
+    } else {
+      toast.error("Invalid credentials");
     }
-
-    const userData = {
-      email,
-      password,
-    };
-    // dispatch(login(userData));
   };
 
   // if (isLoading) {
@@ -70,13 +45,12 @@ const Login = () => {
         <form onSubmit={onSubmit}>
           <div className="form-group">
             <input
-              type="email"
+              type="id"
               className="form-control"
-              id="email"
-              name="email"
-              value={email}
-              onChange={onChange}
-              placeholder="Enter your email"
+              id="id"
+              name="id"
+              placeholder="Enter your ID"
+              ref={idField}
               required
             />
           </div>
@@ -86,8 +60,7 @@ const Login = () => {
               className="form-control"
               id="password"
               name="password"
-              value={password}
-              onChange={onChange}
+              ref={passwordField}
               placeholder="Enter your password"
               required
             />

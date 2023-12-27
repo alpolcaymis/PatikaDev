@@ -8,22 +8,17 @@ export const CartContextProvider = ({ children }) => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [foundArray, setFoundArray] = useState([]); //It actually an object, not array. Rename it.
 
-  function onCloseModal() {
-    setModalIsOpen(false);
-  }
-  function openModal() {
-    setModalIsOpen(true);
-  }
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [productsArray, setProductsArray] = useState([]);
-  let url = `https://fakestoreapi.com/products`;
+  // let url = `https://fakestoreapi.com/products`;
 
-  useEffect(() => {
-    axios(url).then(({ data }) => {
-      setProductsArray(data);
-      console.log("fetch fn worked!");
-    });
-  }, [url]);
+  // useEffect(() => {
+  //   axios(url).then(({ data }) => {
+  //     setProductsArray(data);
+  //     console.log("fetch fn worked!");
+  //   });
+  // }, [url]);
 
   const filterArray = (productID) => {
     const filteredArray = productsArray.filter((item) => item.id !== productID);
@@ -40,10 +35,9 @@ export const CartContextProvider = ({ children }) => {
         productsArray,
         filterArray,
         findInArray,
-        modalIsOpen,
-        openModal,
-        onCloseModal,
         foundArray,
+        setIsLoggedIn,
+        isLoggedIn,
       }}
     >
       {children}
