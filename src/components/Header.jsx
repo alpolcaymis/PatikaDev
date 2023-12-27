@@ -25,6 +25,9 @@ const Header = () => {
       <div className="logo">
         <Link to="/admin">Admin Panel</Link>
       </div>
+      <div className="logo">
+        <Link to="/ticket-search">Search Ticket</Link>
+      </div>
       <ul>
         {isLoggedIn ? (
           <li

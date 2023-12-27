@@ -1,10 +1,9 @@
 import BackButton from "../components/BackButton";
-import Spinner from "../components/Spinner";
 import { useParams, useNavigate } from "react-router-dom";
+import { useCartContext } from "../context/cart-context";
 
 function Ticket() {
-  const params = useParams();
-  const { ticketId } = useParams();
+  const { ticket } = useCartContext();
   const navigate = useNavigate();
 
   // const onTicketClose = () => {
@@ -17,7 +16,7 @@ function Ticket() {
       <header className="ticket-header">
         <BackButton url="/admin/tickets" />
         <h2>
-          Ticket ID : {ticket._id}
+          Ticket ID : {ticket.id}
           <span className={`status status-${ticket.status}`}>
             {ticket.status}
           </span>
@@ -28,15 +27,19 @@ function Ticket() {
         <h3>Product: {ticket.product}</h3>
         <hr />
         <div className="ticket-desc">
-          <h3>Description of Issue</h3>
-          <p>{ticket.description}</p>
+          <h3>Note</h3>
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="6"
+            placeholder={ticket.note}
+          ></textarea>
         </div>
       </header>
 
       {ticket.status !== "closed" && (
-        <button onClick={onTicketClose} className="btn btn-block btn-danger">
-          Close Ticket
-        </button>
+        <button className="btn btn-block btn-danger">Close Ticket</button>
       )}
     </div>
   );

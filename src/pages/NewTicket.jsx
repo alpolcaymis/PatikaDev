@@ -1,15 +1,29 @@
 import Spinner from "../components/Spinner";
+import { useNavigate } from "react-router-dom";
 import BackButton from "../components/BackButton";
+import YoutubeForm from "../components/YoutubeForm";
 
 function NewTicket() {
-  if (false) {
-    return <Spinner />;
-  }
+  const navigate = useNavigate();
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+
+    navigate("/ticket-success");
+  };
 
   return (
     <>
       <BackButton url="/" />
-      <section className="heading">
+      <YoutubeForm />
+    </>
+  );
+}
+
+export default NewTicket;
+
+{
+  /* <section className="heading">
         <h1>Create New Ticket</h1>
         <p>Please fill out the form below</p>
       </section>
@@ -40,14 +54,12 @@ function NewTicket() {
                 placeholder="Description"
               ></textarea>
               <div className="form-group">
-                <button className="btn btn-block">Submit</button>
+                <button onClick={onSubmit} className="btn btn-block">
+                  Submit
+                </button>
               </div>
             </div>
           </div>
         </form>
-      </section>
-    </>
-  );
+      </section> */
 }
-
-export default NewTicket;

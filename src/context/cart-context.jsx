@@ -20,6 +20,34 @@ export const CartContextProvider = ({ children }) => {
   //   });
   // }, [url]);
 
+  const tickets = [
+    {
+      id: "123",
+      createdAt: "12/12/2023",
+      product: "Apple",
+      status: "new",
+    },
+    {
+      id: "567",
+      createdAt: "24/24/2023",
+      product: "Samsung",
+      status: "open",
+    },
+    {
+      id: "789",
+      createdAt: "27/12/2023",
+      product: "OnePlus",
+      status: "closed",
+    },
+  ];
+  const ticket = {
+    id: "123",
+    createdAt: "12/12/2023",
+    product: "Apple",
+    status: "new",
+    note: "selam note yazacaksın aşko",
+  };
+
   const filterArray = (productID) => {
     const filteredArray = productsArray.filter((item) => item.id !== productID);
     setProductsArray(filteredArray);
@@ -38,6 +66,8 @@ export const CartContextProvider = ({ children }) => {
         foundArray,
         setIsLoggedIn,
         isLoggedIn,
+        tickets,
+        ticket,
       }}
     >
       {children}

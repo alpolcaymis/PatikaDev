@@ -10,6 +10,8 @@ import Tickets from "./pages/Tickets";
 import Ticket from "./pages/Ticket";
 import { CartContextProvider } from "./context/cart-context";
 import AdminPanel from "./pages/AdminPanel";
+import SearchTicket from "./pages/SearchTicket";
+import SuccessTicket from "./pages/SuccessTicket";
 
 function App() {
   return (
@@ -28,6 +30,10 @@ function App() {
               </Route>
 
               <Route path="/new-ticket" element={<NewTicket />} />
+
+              <Route path="/ticket-success" element={<SuccessTicket />} />
+
+              <Route path="/ticket-search" element={<SearchTicket />} />
 
               <Route path="/admin/tickets" element={<PrivateRoute />}>
                 <Route path="/admin/tickets" element={<Tickets />} />

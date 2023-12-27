@@ -1,31 +1,13 @@
 import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
 import TicketItem from "../components/TicketItem";
+import { useCartContext } from "../context/cart-context";
 
 function Tickets() {
   if (false) {
     return <Spinner />;
   }
-  const tickets = [
-    {
-      id: "123",
-      createdAt: "12/12/2023",
-      product: "Apple",
-      status: "new",
-    },
-    {
-      id: "567",
-      createdAt: "24/24/2023",
-      product: "Samsung",
-      status: "open",
-    },
-    {
-      id: "789",
-      createdAt: "27/12/2023",
-      product: "OnePlus",
-      status: "closed",
-    },
-  ];
+  const { tickets } = useCartContext();
 
   return (
     <>
