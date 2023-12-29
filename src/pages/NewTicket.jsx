@@ -1,7 +1,6 @@
-import Spinner from "../components/Spinner";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../components/BackButton";
-import YoutubeForm from "../components/YoutubeForm";
+import Form from "../components/Form";
 
 function NewTicket() {
   const navigate = useNavigate();
@@ -15,7 +14,7 @@ function NewTicket() {
   return (
     <>
       <BackButton url="/" />
-      <YoutubeForm />
+      <Form />
     </>
   );
 }
