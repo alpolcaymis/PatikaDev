@@ -1,15 +1,13 @@
 import BackButton from "../components/BackButton";
 import { useParams, useNavigate } from "react-router-dom";
 import { useCartContext } from "../context/cart-context";
+import { useRef } from "react";
 
 function Ticket() {
-  const { ticket } = useCartContext();
-  const navigate = useNavigate();
+  const { foundTicketObj } = useCartContext();
+  const NoteTextArea = useRef();
 
-  // const onTicketClose = () => {
-  //   dispatch(closeTicket(ticketId));
-  //   toast.success("Ticket Closed");
-  //   navigate("/tickets");
+  const ticket = foundTicketObj;
 
   return (
     <div className="ticket-page">
@@ -24,11 +22,12 @@ function Ticket() {
         <h3>
           Date Submitted: {new Date(ticket.createdAt).toLocaleString("en-US")}
         </h3>
-        <h3>Product: {ticket.product}</h3>
+        <h3>name: {ticket.name}</h3>
         <hr />
         <div className="ticket-desc">
           <h3>Note</h3>
           <textarea
+            ref={NoteTextArea}
             name=""
             id=""
             cols="30"
@@ -46,3 +45,8 @@ function Ticket() {
 }
 
 export default Ticket;
+
+// const onTicketClose = () => {
+//   dispatch(closeTicket(ticketId));
+//   toast.success("Ticket Closed");
+//   navigate("/tickets");
