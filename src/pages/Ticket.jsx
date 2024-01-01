@@ -1,7 +1,7 @@
 import BackButton from "../components/BackButton";
 import { useParams, useNavigate } from "react-router-dom";
 import { useCartContext } from "../context/cart-context";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 function Ticket() {
   const { foundTicketObj } = useCartContext();
@@ -9,8 +9,14 @@ function Ticket() {
 
   const ticket = foundTicketObj;
 
+  const edit = () => {
+    ticket.note = NoteTextArea.current.value;
+  };
+  const { ticketId } = useParams();
+
   return (
     <div className="ticket-page">
+      <h1>Adana: {ticketId}</h1>
       <header className="ticket-header">
         <BackButton url="/admin/tickets" />
         <h2>
@@ -38,7 +44,9 @@ function Ticket() {
       </header>
 
       {ticket.status !== "closed" && (
-        <button className="btn btn-block btn-danger">Close Ticket</button>
+        <button className="btn btn-block btn-danger" onClick={() => edit()}>
+          Close Ticket
+        </button>
       )}
     </div>
   );
