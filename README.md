@@ -1,8 +1,12 @@
 
-[CANLI TIKLA](https://vermillion-narwhal-fee29f.netlify.app/) 
-[GÖR Bİ BAK](https://vermillion-narwhal-fee29f.netlify.app/) 
+[CANLI TIKLA](https://659378f2814248351152e928--resilient-scone-58e021.netlify.app/login/) 
 
-![image](https://github.com/alpolcaymis/PatikaDev/assets/71964088/49a4d673-fd04-459f-8909-1e994eec92cc)
-![image](https://github.com/alpolcaymis/PatikaDev/assets/71964088/64b98ede-8d32-46eb-9e0c-4008d72fc92c)
+[GÖR Bİ BAK](https://659378f2814248351152e928--resilient-scone-58e021.netlify.app/login/) 
+
+![image](https://github.com/alpolcaymis/PatikaDev/assets/71964088/16ceac64-ab0d-4e93-b181-33cf87b64f05)
+![image](https://github.com/alpolcaymis/PatikaDev/assets/71964088/f2f6f3e5-9521-4c31-8ba4-b0169f66727d)
+
+
+
 
 
