@@ -1,18 +1,9 @@
 import BackButton from "../components/BackButton";
 import TicketItem from "../components/TicketItem";
-import { useCartContext } from "../context/cart-context";
 
-import {
-  collection,
-  getDocs,
-  query,
-  where,
-  orderBy,
-  limit,
-  startAfter,
-} from "firebase/firestore";
+import { collection, getDocs, query, orderBy, limit } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { db } from "../firebase-config";
 import { toast } from "react-toastify";
 import Spinner from "../components/Spinner";
@@ -22,7 +13,6 @@ function Tickets() {
   const [loading, setLoading] = useState(true);
 
   const params = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchTickets = async () => {

@@ -1,10 +1,8 @@
 import React from "react";
 import { FaTicketAlt } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function AdminPanel() {
-  const navigate = useNavigate();
-
   return (
     <div>
       <h1>AdminPanel</h1>

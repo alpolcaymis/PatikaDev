@@ -335,22 +335,6 @@ h3 {
   transform: scale(0.98);
 }
 
-p.status-in-progress {
-  color: orangered;
-}
-
-p.status-waiting {
-  color: red;
-}
-
-p.status-ready {
-  color: steelblue;
-}
-
-p.status-complete {
-  color: green;
-}
-
 footer {
   position: sticky;
   top: 95vh;
@@ -405,4 +389,19 @@ footer {
   .heading p {
     font-size: 1.5rem;
   }
+}
+
+.shareIconDiv {
+  cursor: pointer;
+  position: fixed;
+  top: 15%;
+  right: 35%;
+  z-index: 2;
+  background-color: rgb(251, 255, 0);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

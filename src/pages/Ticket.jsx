@@ -118,7 +118,7 @@ function Ticket() {
                 ref={NoteTextArea}
                 name=""
                 id=""
-                cols="70"
+                cols="40"
                 rows="6"
                 placeholder={ticket.note}
               ></textarea>
