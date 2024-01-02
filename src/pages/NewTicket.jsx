@@ -1,20 +1,11 @@
-import { useNavigate } from "react-router-dom";
 import BackButton from "../components/BackButton";
-import Form from "../components/Form";
+import CreateTicket from "../components/CreateTicket";
 
 function NewTicket() {
-  const navigate = useNavigate();
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    navigate("/ticket-success");
-  };
-
   return (
     <>
       <BackButton url="/" />
-      <Form />
+      <CreateTicket />
     </>
   );
 }

@@ -1,8 +1,8 @@
 import { FaSignInAlt, FaSignOutAlt, FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useCartContext } from "../context/cart-context";
-// import { useSelector, useDispatch } from "react-redux";
-// import { logout, reset } from "../features/auth/authSlice";
+
+import patikalogo from "../assets/svg/patika-logo.svg";
 
 const Header = () => {
   const { setIsLoggedIn, isLoggedIn } = useCartContext();
@@ -20,12 +20,19 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <Link to="/">Support Desk</Link>
+        <Link to="/">
+          <img src={patikalogo} alt="patika-logo" style={{ width: "14rem" }} />
+        </Link>
       </div>
-      <div className="logo">
-        <Link to="/admin">Admin Panel</Link>
-      </div>
-      <div className="logo">
+      <ul>
+        <li>
+          <Link to="/admin">
+            <FaUser />
+            <p className="truncate ">Admin Panel</p>
+          </Link>
+        </li>
+      </ul>
+      <div>
         <Link to="/ticket-search">Search Ticket</Link>
       </div>
       <ul>

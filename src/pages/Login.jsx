@@ -1,10 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { FaSignInAlt } from "react-icons/fa";
-// import { useSelector, useDispatch } from "react-redux";
-// import { login, reset } from "../features/auth/authSlice";
-import Spinner from "../components/Spinner";
 import { useCartContext } from "../context/cart-context";
 
 const Login = () => {
@@ -29,17 +26,14 @@ const Login = () => {
     }
   };
 
-  // if (isLoading) {
-  //   return <Spinner />;
-  // }
-
   return (
     <>
       <section className="heading">
         <h1>
-          <FaSignInAlt /> Login
+          <FaSignInAlt /> Staff Only
         </h1>
-        <p>Please login in to get support</p>
+        <p>login page</p>
+        <p>For registration contact w/ Alp</p>
       </section>
       <section className="form">
         <form onSubmit={onSubmit}>

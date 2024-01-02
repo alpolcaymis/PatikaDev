@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function SearchTicket() {
   const input = useRef();
@@ -13,11 +14,14 @@ function SearchTicket() {
           ref={input}
           type="text"
           placeholder="enter your code ticket ID"
+          required
         />
         <button
           className="btn btn-block"
           onClick={() => {
-            navigate(`/admin/ticket/${input.current.value}`);
+            input.current.value !== ""
+              ? navigate(`/ticket/${input.current.value}`)
+              : toast.error("please enter given ticket ID code");
           }}
         >
           Search

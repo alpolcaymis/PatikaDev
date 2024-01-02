@@ -1,16 +1,67 @@
 import { useForm, Controller } from "react-hook-form";
+
+import { useState, useEffect, useRef } from "react";
+
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase-config";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import Spinner from "../components/Spinner";
+
 import { useCartContext } from "../context/cart-context";
 
-const randomId = () => {
-  const generateId = () => {
-    return Math.random().toString(36).substr(2, 9);
-  };
+const CreateTicket = () => {
+  const { setLastCreatedTicketId, lastCreatedTicketId } = useCartContext();
 
-  return generateId();
-};
+  const [loading, setLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    surname: "",
+    age: 12,
+    tcNo: 13,
+    reason: "",
+    address: "",
+    images: {},
+    status: "",
+    note: "",
+    timestamp: "",
+  });
 
-const Form = () => {
-  const { tickets } = useCartContext();
+  const {
+    name,
+    surname,
+    age,
+    tcNo,
+    reason,
+    address,
+    images,
+    status,
+    note,
+    timestamp,
+  } = formData;
+
+  const navigate = useNavigate();
+  const isMounted = useRef(true);
+
+  useEffect(() => {
+    if (isMounted) {
+      setFormData({ ...formData });
+    }
+
+    return () => {
+      isMounted.current = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMounted]);
+
+  const [tickets, setTickets] = useState([]);
+  const ticketsCollectionRef = collection(db, "tickets");
   const {
     handleSubmit,
     control,
@@ -19,23 +70,28 @@ const Form = () => {
     formState: { errors },
   } = useForm();
 
-  const id = randomId();
+  const createTicket = async () => {
+    await addDoc(ticketsCollectionRef, { name: newName, age: Number(newAge) });
+  };
 
-  const onSubmit = (data) => {
-    const formDataWithId = { id, ...data };
-
-    const formDataWithCreatedAt = { ...formDataWithId, createdAt: new Date() };
-
-    const formDataWithStatus = { ...formDataWithCreatedAt, status: "new" };
-
-    const ticketObject = formDataWithStatus;
-
-    console.log(ticketObject);
-
-    tickets.push(ticketObject);
-
-    // Diğer işlemler burada gerçekleştirilebilir, örneğin API'ye gönderme
-    // ...
+  const onSubmit = async (data) => {
+    setLoading(true);
+    const formDataCopy = {
+      ...data,
+      // imgUrls,
+      images,
+      note: "empty note",
+      status: "new",
+      timestamp: serverTimestamp(),
+    };
+    console.log(formDataCopy);
+    const docRef = await addDoc(collection(db, "tickets"), formDataCopy);
+    setLoading(false);
+    toast.success("Başvuru Başarıyla Gönderildi");
+    // navigate(`/ticket/${docRef.id}`);
+    navigate(`/ticket-success`);
+    setLastCreatedTicketId(docRef.id);
+    console.log(lastCreatedTicketId);
   };
 
   return (
@@ -96,25 +152,25 @@ const Form = () => {
           <label>Reason for</label>
 
           <select {...register("reason", { required: "Bu alan zorunlu" })}>
-            <option value="sanane">sanane</option>
-            <option value="canım istedi">canım istedi</option>
-            <option value="fakirim">fakirim</option>
-            <option value="zengin olucam">zengin olucam</option>
+            <option value="iş">iş</option>
+            <option value="kariyer">kariyer</option>
+            <option value="network">network</option>
+            <option value="girişim">girişim</option>
           </select>
 
           {errors.reason && <span>{errors.reason.message}</span>}
         </div>
 
         <div className="form-group">
-          <label>Adres Bilgisi</label>
+          <label>Address</label>
           <textarea {...register("address", { required: "Bu alan zorunlu" })} />
           {errors.address && <span>{errors.address.message}</span>}
         </div>
 
         <div className="form-group">
           <label>Fotograflar/Ekler</label>
-          <input type="file" {...register("photoAttach")} />
-          {errors.photoAttach && <span>{errors.photoAttach.message}</span>}
+          <input type="file" {...register("images")} />
+          {errors.images && <span>{errors.images.message}</span>}
         </div>
         <div className="form-group">
           <button type="submit" className="btn btn-block">
@@ -126,4 +182,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default CreateTicket;

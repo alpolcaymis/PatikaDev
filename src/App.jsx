@@ -42,6 +42,7 @@ function App() {
               <Route path="/admin/ticket/:ticketId" element={<PrivateRoute />}>
                 <Route path="/admin/ticket/:ticketId" element={<Ticket />} />
               </Route>
+              <Route path="/ticket/:ticketId" element={<Ticket />} />
             </Routes>
           </div>
         </Router>

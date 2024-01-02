@@ -1,29 +1,19 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import EditIcon from "../assets/svg/editIcon.svg";
 
-import { useCartContext } from "../context/cart-context";
-
-function TicketItem({ ticket }) {
-  const { findInTickets } = useCartContext();
-
+function TicketItem({ ticket, id, onEdit }) {
   return (
     <div className="ticket">
-      {/* <div>{new Date(ticket.createdAt).toLocaleString("en-US")}</div>
-      <div>{ticket.product}</div>
-      <div className={`status status-${ticket.status}`}>{ticket.status}</div>
-      <Link to={`/ticket/${ticket.id}`} className="btn btn-reverse btn-sm">
-        View
-      </Link> */}
-      <div>{"27/12/2023"}</div>
+      <div> {new Date(ticket.timestamp.toDate()).toUTCString()}</div>
       <div>{ticket.name}</div>
+
       <div className={`status status-${ticket.status}`}>{ticket.status}</div>
-      <Link
-        to={`/admin/ticket/${ticket.id}`}
-        className="btn btn-reverse btn-sm"
-        onClick={() => findInTickets(ticket.id)}
-      >
+      <Link to={`/admin/ticket/${id}`} className="btn btn-reverse btn-sm">
         View
       </Link>
+      {onEdit && (
+        <img src={EditIcon} className="editIcon" onClick={() => onEdit(id)} />
+      )}
     </div>
   );
 }
