@@ -99,7 +99,11 @@ function Ticket() {
             </span>
           </h2>
           <h3>
-            Date Submitted: {new Date(ticket.timestamp.toDate()).toUTCString()}
+            Date Submitted:{" "}
+            {new Date(ticket.timestamp.toDate()).toLocaleString("tr-TR", {
+              timeZone: "Europe/Istanbul",
+              hour12: false,
+            })}
           </h3>
           <h3>Name: {ticket.name}</h3>
           <h3>Surname : {ticket.surname}</h3>

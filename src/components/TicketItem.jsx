@@ -4,7 +4,13 @@ import EditIcon from "../assets/svg/editIcon.svg";
 function TicketItem({ ticket, id, onEdit }) {
   return (
     <div className="ticket">
-      <div> {new Date(ticket.timestamp.toDate()).toUTCString()}</div>
+      <div>
+        {new Date(ticket.timestamp.toDate()).toLocaleString("tr-TR", {
+          timeZone: "Europe/Istanbul",
+          hour12: false,
+        })}
+      </div>
+
       <div>{ticket.name}</div>
 
       <div className={`status status-${ticket.status}`}>{ticket.status}</div>
