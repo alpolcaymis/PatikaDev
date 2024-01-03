@@ -11,25 +11,33 @@ function SuccessTicket() {
       <BackButton url="/ticket-search" />
       <h1>Thank you</h1>
       <h3>We recieved your application!</h3>
-      <div className="flex justify-around ">
-        <h3>
-          <pre> Here is your CODE : </pre>
-          <code className="bg-black text-emerald-300 font-extralight">
+      <div>
+        <p className="pb-2"> Here is your CODE : </p>
+        <div className="flex justify-center items-center">
+          <code
+            className="bg-black hover:opacity-70 text-emerald-300 font-extralight py-2 px-4 rounded-md hover:cursor-pointer active:bg-slate-600 "
+            onClick={() => {
+              navigator.clipboard.writeText(lastCreatedTicketId);
+              setShareLinkCopied(true);
+              setTimeout(() => {
+                setShareLinkCopied(false);
+              }, 2000);
+            }}
+          >
             {lastCreatedTicketId}
           </code>
-        </h3>
-
-        <div
-          className="shareIconDiv hover:cursor-pointer"
-          onClick={() => {
-            navigator.clipboard.writeText(window.location.href);
-            setShareLinkCopied(true);
-            setTimeout(() => {
-              setShareLinkCopied(false);
-            }, 2000);
-          }}
-        >
-          <img src={copyIcon} alt="" />
+          <span
+            className="hover:cursor-pointer bg-white pl-4"
+            onClick={() => {
+              navigator.clipboard.writeText(lastCreatedTicketId);
+              setShareLinkCopied(true);
+              setTimeout(() => {
+                setShareLinkCopied(false);
+              }, 2000);
+            }}
+          >
+            <img src={copyIcon} alt="" />
+          </span>
         </div>
       </div>
 
