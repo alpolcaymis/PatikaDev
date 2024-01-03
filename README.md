@@ -2,7 +2,7 @@
 [CANLI TIKLA](https://659569013061a60093e95400--tranquil-sprinkles-1c5d8a.netlify.app/) 
 [GÖR Bİ BAK](https://659569013061a60093e95400--tranquil-sprinkles-1c5d8a.netlify.app/) 
 
-# CSS-Complete-Repo
+# final case
 
 <table border="1px solid white">
  <tr>
@@ -22,6 +22,7 @@
 
 
 
+![image](https://github.com/alpolcaymis/PatikaDev/assets/71964088/dc295ab9-05eb-4282-87ef-af71a5e2d877)
 
 
 
