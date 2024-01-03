@@ -10,7 +10,7 @@
     <td><b style="font-size:30px">Customers</b></td>
  </tr>
  <tr>
-    <td><img style="height:auto;width:100%" src="https://github.com/alpolcaymis/CSS-Complete-Repo/assets/71964088/63a295d9-0ab3-4916-92c6-b3f918284ad4](https://github.com/alpolcaymis/PatikaDev/assets/71964088/dc77c692-a4fd-4ffb-b254-1af275491f48" alt="Image 1"></td>
+    <td><img style="height:auto;width:100%" src="https://github.com/alpolcaymis/PatikaDev/assets/71964088/dc77c692-a4fd-4ffb-b254-1af275491f48" alt="Image 1"></td>
     <td><img style="height:auto;width:100%" src="https://github.com/alpolcaymis/PatikaDev/assets/71964088/16ceac64-ab0d-4e93-b181-33cf87b64f05" alt="Image 2"></td>
  </tr>  
 </table>
