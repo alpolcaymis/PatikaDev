@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
 
     if (
-      idField.current.value === "kodluyoruz" &&
+      idField.current.value === "kodluyoruz" && // hardcode check ⛔ not cool I know
       passwordField.current.value === "bootcamp109"
     ) {
       setIsLoggedIn(true);
