@@ -25,15 +25,15 @@ function App() {
 
               <Route path="/login" element={<Login />} />
 
-              <Route path="/admin" element={<PrivateRoute />}>
-                <Route path="/admin" element={<AdminPanel />} />
-              </Route>
-
               <Route path="/new-ticket" element={<NewTicket />} />
 
               <Route path="/ticket-success" element={<SuccessTicket />} />
 
               <Route path="/ticket-search" element={<SearchTicket />} />
+
+              <Route path="/admin" element={<PrivateRoute />}>
+                <Route path="/admin" element={<AdminPanel />} />
+              </Route>
 
               <Route path="/admin/tickets" element={<PrivateRoute />}>
                 <Route path="/admin/tickets" element={<Tickets />} />
@@ -42,6 +42,7 @@ function App() {
               <Route path="/admin/ticket/:ticketId" element={<PrivateRoute />}>
                 <Route path="/admin/ticket/:ticketId" element={<Ticket />} />
               </Route>
+
               <Route path="/ticket/:ticketId" element={<Ticket />} />
             </Routes>
           </div>

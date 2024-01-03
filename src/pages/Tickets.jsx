@@ -21,7 +21,7 @@ function Tickets() {
         const ticketsRef = collection(db, "tickets");
 
         // Create a query
-        const q = query(ticketsRef, orderBy("timestamp", "desc"), limit(10));
+        const q = query(ticketsRef, orderBy("timestamp", "desc"), limit(60));
         // Execute query
         const querySnap = await getDocs(q);
 
