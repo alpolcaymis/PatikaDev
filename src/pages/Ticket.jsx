@@ -109,21 +109,20 @@ function Ticket() {
           <h3>Address : {ticket.address}</h3>
           <hr />
         </header>
-
-        {isLoggedIn && (
-          <>
-            <div className="ticket-desc">
-              <h3>Note</h3>
-              <textarea
-                ref={NoteTextArea}
-                name=""
-                id=""
-                cols="40"
-                rows="6"
-                placeholder={ticket.note}
-              ></textarea>
-            </div>
-
+        <>
+          <div className="ticket-desc">
+            <h3>Note</h3>
+            <textarea
+              ref={NoteTextArea}
+              name=""
+              id=""
+              cols="40"
+              rows="6"
+              placeholder={ticket.note}
+              disabled={!isLoggedIn}
+            ></textarea>
+          </div>
+          {isLoggedIn && (
             <button
               className="btn btn-block btn-danger"
               onClick={() => {
@@ -132,8 +131,8 @@ function Ticket() {
             >
               Close Ticket
             </button>
-          </>
-        )}
+          )}
+        </>
       </div>
     </main>
   );
