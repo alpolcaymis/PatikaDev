@@ -8,7 +8,7 @@
  <tr>
     <td><b style="font-size:30px">Home</b></td>
     <td><b style="font-size:30px">Success</b></td>
-    <td><b style="font-size:30px">Customers</b></td>
+    <td><b style="font-size:30px">New</b></td>
  </tr>
  <tr>
     <td><img style="height:auto;width:100%" src="https://github.com/alpolcaymis/PatikaDev/assets/71964088/16ceac64-ab0d-4e93-b181-33cf87b64f05" alt="Image 3"></td>
@@ -17,10 +17,8 @@
   
  </tr>  
 </table>
-[asd](https://github.com/alpolcaymis/PatikaDev/assets/71964088/dc77c692-a4fd-4ffb-b254-1af275491f48)
 
 
-![image]()
 
 
 
