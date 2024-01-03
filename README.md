@@ -7,8 +7,8 @@
 <table border="1px solid white">
  <tr>
     <td><b style="font-size:30px">Home</b></td>
-    <td><b style="font-size:30px">Success</b></td>
-    <td><b style="font-size:30px">New</b></td>
+    <td><b style="font-size:30px">thank you</b></td>
+    <td><b style="font-size:30px">Form</b></td>
  </tr>
  <tr>
     <td><img style="height:auto;width:100%" src="https://github.com/alpolcaymis/PatikaDev/assets/71964088/16ceac64-ab0d-4e93-b181-33cf87b64f05" alt="Image 3"></td>
